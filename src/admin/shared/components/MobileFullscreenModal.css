@@ -1,0 +1,51 @@
+.mobile-fullscreen-modal {
+  position: fixed;
+  inset: 0;
+  /* Must stay above mobile CRUD detail dialogs (z-index: 1100). */
+  z-index: 1300;
+  height: 100vh;
+  height: 100dvh;
+}
+
+.mobile-fullscreen-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgba(5, 10, 18, 0.76);
+  padding: 0;
+}
+
+.mobile-fullscreen-modal__panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.mobile-fullscreen-modal__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: calc(12px + env(safe-area-inset-top, 0px)) 14px 12px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.mobile-fullscreen-modal__copy {
+  min-width: 0;
+  display: grid;
+  gap: 4px;
+}
+
+.mobile-fullscreen-modal__body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 12px 12px calc(12px + env(safe-area-inset-bottom, 0px));
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}

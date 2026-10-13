@@ -1,0 +1,64 @@
+{
+  "roles": {
+    "admin": {
+      "inherits": ["seller", "buyer"],
+      "permissions": ["pages.*", "apis.*"]
+    },
+    "seller": {
+      "inherits": ["buyer"],
+      "permissions": [
+        "pages.42pay.dashboard",
+        "pages.42pay.products",
+        "pages.42pay.offers",
+        "pages.42pay.orders",
+        "pages.settings.profile",
+        "apis.auth.me",
+        "apis.auth.profile.read",
+        "apis.auth.profile.write",
+        "apis.42pay.dashboard.read",
+        "apis.42pay.products.read",
+        "apis.42pay.products.write",
+        "apis.42pay.offers.read",
+        "apis.42pay.offers.write",
+        "apis.42pay.orders.read"
+      ]
+    },
+    "buyer": {
+      "inherits": [],
+      "permissions": [
+        "pages.42pay.dashboard",
+        "pages.42pay.offers",
+        "pages.42pay.scan",
+        "pages.42pay.orders",
+        "pages.42pay.topup",
+        "pages.settings.profile",
+        "apis.auth.me",
+        "apis.auth.profile.read",
+        "apis.auth.profile.write",
+        "apis.42pay.dashboard.read",
+        "apis.42pay.offers.read",
+        "apis.42pay.wallet.read",
+        "apis.42pay.wallet.write",
+        "apis.42pay.orders.read",
+        "apis.42pay.orders.write",
+        "apis.42pay.scan.read",
+        "apis.42pay.scan.write"
+      ]
+    }
+  },
+  "pages": [
+    { "label": "Dashboard", "to": "/admin/42pay/dashboard", "permission": "pages.42pay.dashboard" },
+    { "label": "Products", "to": "/admin/42pay/products", "permission": "pages.42pay.products" },
+    { "label": "Offers", "to": "/admin/42pay/offers", "permission": "pages.42pay.offers" },
+    { "label": "Scan QR", "to": "/admin/42pay/scan", "permission": "pages.42pay.scan" },
+    { "label": "Orders", "to": "/admin/42pay/orders", "permission": "pages.42pay.orders" },
+    { "label": "Top Up", "to": "/admin/42pay/topup", "permission": "pages.42pay.topup" },
+    { "label": "Pay Users", "to": "/admin/42pay/admin/users", "permission": "pages.42pay.admin.users" },
+    { "label": "Profile", "to": "/settings/profile", "permission": "pages.settings.profile" },
+    { "label": "Users", "to": "/system/users", "permission": "pages.system.users" }
+  ],
+  "apis": [
+    { "label": "Pays", "to": "/api/42pay", "permission": "apis.42pay.*" },
+    { "label": "Authentication", "to": "/auth", "permission": "apis.auth.*" }
+  ]
+}

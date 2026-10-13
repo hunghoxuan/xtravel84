@@ -1,0 +1,13 @@
+.DS_Store
+.env
+.env.local
+*.log
+node_modules/
+dist/
+.local/
+data/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+src/admin/.env.local
+src/api/.env.local

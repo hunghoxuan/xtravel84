@@ -1,0 +1,22 @@
+{
+  "name": "xtravel84-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pays and user API for xtravel84",
+  "main": "app/server.js",
+  "scripts": {
+    "start": "node app/server.js",
+    "dev": "node --watch app/server.js",
+    "check": "node --check app/server.js",
+    "test": "node --test modules/42pay/*.test.js modules/system/users/*.test.js modules/system/users/providers/*.test.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.10.0",
+    "pg": "^8.21.0",
+    "qrcode": "^1.5.4",
+    "redis": "^4.7.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

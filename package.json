@@ -1,0 +1,12 @@
+{
+  "name": "xtravel84-workspace",
+  "private": true,
+  "packageManager": "pnpm@9.13.2",
+  "scripts": {
+    "install:workspace": "pnpm install",
+    "dev": "bash scripts/start/dev.sh",
+    "test": "pnpm --filter xtravel84-api test && pnpm --filter @xtravel84/admin test:unit",
+    "build": "pnpm --filter @xtravel84/admin build"
+  },
+  "devDependencies": {}
+}
